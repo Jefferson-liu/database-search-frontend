@@ -1,0 +1,33 @@
+.app-sidebar {
+    width: 200px;
+    background-color: #1b1c20;
+    color: #c9c9c9;
+    border-right: 1px solid #2c2c2c;
+    color: #ccc;
+    padding: 16px;
+    border-right: 1px solid #333;
+    box-sizing: border-box;
+}
+
+.sidebar-section h4 {
+    margin-bottom: 12px;
+    color: #f3f3f3;
+    font-size: 15px;
+}
+
+.sidebar-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-section li {
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.sidebar-section li:hover {
+    color: #fff;
+    font-weight: 500;
+}

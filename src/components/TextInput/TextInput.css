@@ -1,0 +1,23 @@
+.text-input-solo {
+  width: 100%;
+  max-width: 600px;
+  background-color: #343541;
+  border: 1px solid #565869;
+  border-radius: 24px;
+  padding: 0.65rem 1rem 0.7rem 1rem;
+  font-size: 1rem;
+  color: white;
+  resize: none;
+  outline: none;
+  font-family: inherit;
+  transition: border-color 0.2s ease;
+  line-height: 1.4;
+  vertical-align: middle;
+  box-sizing: border-box;
+  overflow-y: hidden;
+  resize: none;
+}
+
+.text-input-solo:focus {
+  border-color: #10a37f;
+}

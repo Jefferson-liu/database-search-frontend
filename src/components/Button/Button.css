@@ -1,0 +1,33 @@
+.btn {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+  transition: outline 0.2s ease;
+  outline: none;
+}
+  
+.btn:hover {
+    filter: brightness(90%);
+  }
+
+.btn:focus {
+    outline: none;
+    box-shadow: none;
+}
+  
+.btn:active {
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.6);
+}
+
+
+.btn.primary {
+  background-color: #535353;
+  color: white;
+}
+
+.btn.secondary {
+  background-color: #777777;
+  color: white;
+}
+

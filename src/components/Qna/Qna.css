@@ -1,0 +1,94 @@
+.qna-editor-content {
+  flex: 1;
+  padding: 0px;
+  overflow-y: auto;
+  background-color: #1e1e1e;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.qna-question-header {
+  width: 100%;
+  margin-bottom: 24px;
+  border-bottom: 1px solid #3a3d41;
+  padding-bottom: 0px;
+}
+
+.qna-question-header.focused {
+  border-bottom: 1px solid #ffffff;
+}
+
+.editable-question {
+  width: 100%;
+  min-height: 60px;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #f1f1f1;
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: text;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  direction: ltr;
+  text-align: left;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+.editable-question:focus {
+  border-bottom: 0px solid #aaa;
+  /* 🔥 brighter on focus */
+}
+
+.editable-question:not(:focus):empty::before {
+  content: attr(data-placeholder);
+  color: #888;
+  pointer-events: none;
+  display: block;
+}
+
+.qna-field-section {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.qna-label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: #dcdcdc;
+}
+
+.qna-textarea {
+  width: 100%;
+  min-height: 100px;
+  padding: 10px;
+  border: 1px solid #3a3d41;
+  border-radius: 4px;
+  resize: vertical;
+  font-size: 14px;
+  font-family: inherit;
+  background-color: #2d2d2d;
+  color: #f1f1f1;
+  box-sizing: border-box;
+}
+
+.qna-save-btn {
+  margin-top: 10px;
+  padding: 10px 18px;
+  background-color: #0078d4;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.qna-save-btn:hover {
+  background-color: #005a9e;
+}
