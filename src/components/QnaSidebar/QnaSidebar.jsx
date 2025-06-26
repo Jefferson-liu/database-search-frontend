@@ -11,7 +11,7 @@ function QnaSidebar({ qnaList, selectedIndex, onSelect, onAdd, handleDelete, han
       <div className="qna-sidebar-list">
         {qnaList.map((item, idx) => (
           <QnaSidebarItem
-          key={item.id}
+          key={item.search_id}
           item={item}
           isSelected={selectedIndex === idx}
           onClick={() => onSelect(idx)}
@@ -22,7 +22,7 @@ function QnaSidebar({ qnaList, selectedIndex, onSelect, onAdd, handleDelete, han
         ))}
       </div>
       <button className="add-qna-btn" onClick={onAdd}>
-        + New QnA
+        + New Search
       </button>
     </aside>
   );

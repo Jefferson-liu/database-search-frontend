@@ -1,0 +1,16 @@
+.search-results-table {
+  width: 100%;
+  height: 100%;
+  border-collapse: collapse;
+}
+.search-results-table th, .search-results-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+.search-results-row:hover {
+  text-decoration: underline;
+}
+.search-results-container {
+  margin-top: 16px;
+  overflow-x: auto;
+}

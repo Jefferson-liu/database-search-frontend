@@ -1,0 +1,23 @@
+/* Main layout wrapper */
+.qna-editor-layout {
+  flex: 1;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #1e1e1e;
+  color: #f1f1f1;
+}
+.qna-editor-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  padding: 1.5rem;
+}
+
+.qna-sidebar,
+.app-sidebar,
+.qna-editor-panel {
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.02);
+}

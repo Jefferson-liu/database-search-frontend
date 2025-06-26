@@ -6,18 +6,18 @@ function QnaSidebarItem({ item, isSelected, onClick, onHover, onDelete }) {
     <div
       className={`qna-sidebar-item ${isSelected ? "selected" : ""}`}
       onClick={onClick}
-      onMouseEnter={() => onHover(item.id)}
+      onMouseEnter={() => onHover(item.search_id)}
       onMouseLeave={() => onHover(null)}
     >
-      <span className="qna-sidebar-item-label" title={item.question} >
-        {item.question.slice(0, 40) || "Untitled"}
+      <span className="qna-sidebar-item-label" title={item.customer_name} >
+        {item.customer_name.slice(0, 40) || "Untitled"}
       </span>
       <div className="qna-sidebar-item-actions">
         <button
           className="qna-sidebar-item-delete"
           onClick={(e) => {
             e.stopPropagation(); // prevent triggering select
-            onDelete(item.id);
+            onDelete(item.search_id);
           }}
           aria-label="Delete QnA"
         >

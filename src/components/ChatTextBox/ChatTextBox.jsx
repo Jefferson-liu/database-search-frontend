@@ -7,7 +7,7 @@ function ChatTextBox({ messages, input, setInput, onSend }) {
         bottomRef.current?.scrollIntoView( );
     }, [messages]);
   return (
-    <div className="chat-test-container">
+    <div className="chat-container">
       <div className="chat-box">
         {messages.map((msg, idx) => (
           <div key={idx} className={`msg ${msg.sender}`}>

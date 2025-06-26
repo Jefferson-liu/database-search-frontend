@@ -92,3 +92,19 @@
 .qna-save-btn:hover {
   background-color: #005a9e;
 }
+
+.chat-and-results-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.chat-half {
+  flex: 1 1 50%;
+  overflow: auto;
+}
+
+.results-half {
+  flex: 1 1 50%;
+  overflow: auto;
+}

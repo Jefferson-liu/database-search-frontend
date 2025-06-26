@@ -7,8 +7,7 @@ function AppSidebar() {
       <div className="sidebar-section">
         <ul>
           <li onClick={() => navigate("/")}>Home</li>
-          <li onClick={() => navigate("/edit")}>Edit Knowledge Base</li>
-          <li onClick={() => navigate("/chat")}>Test Chatbot</li>
+          <li onClick={() => navigate("/search")}>Search</li>
         </ul>
       </div>
     </aside>

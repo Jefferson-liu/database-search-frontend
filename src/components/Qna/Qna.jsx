@@ -1,18 +1,40 @@
 import { useEffect, useRef, useState } from "react";
+import useAutosaveWebhook from "../../hooks/useAutosaveWebhook";
+import ChatTextBox from "../ChatTextBox/ChatTextBox";
+import SearchResults from "../SearchResults/SearchResults";
 import "./Qna.css";
 
 function Qna({ qna, onChange, onSave }) {
   const headerRef = useRef(null);
   const [isFocused, setIsFocused] = useState(false);
   const [isEmpty, setIsEmpty] = useState(true);
-  const safeQna = {
-    question: qna?.question ?? "",
-    answer: qna?.answer ?? ""
+  const [input, setInput] = useState("");
+  const [messages, setMessages] = useState([]);
+  const handleRowClick = () => {
+    console.log("Row clicked");
   };
+  const safeQna = {
+    customer_name: qna?.customer_name ?? "",
+    messages: qna?.messages ?? []
+  };
+  const samplePlans = [
+    {
+      item_name: "Test Plan",
+      provider: "Test Provider",
+      region: "Test Region",
+      promotion_price: 10,
+      original_price: 20,
+      data: 5,
+      roaming: ["canada"],
+      free_ld: "Test LD",
+      activation_fee: 0,
+      promo_start_date: "2025-01-01"
+    }
+  ];
 
   useEffect(() => {
     if (headerRef.current) {
-      const val = safeQna.question || "";
+      const val = safeQna.customer_name || "";
       headerRef.current.textContent = val;
       if (val === "") {
         headerRef.current.blur(); // this ensures :not(:focus):empty triggers
@@ -22,12 +44,11 @@ function Qna({ qna, onChange, onSave }) {
 
   const handleHeaderInput = (e) => {
     const content = e.currentTarget.textContent.trim();
-    onChange("question", content);
-  };
-  const handleAnswerInput = (e) => {
-    onChange("answer", e.currentTarget.value);
+    onChange("customer_name", content);
   };
 
+  // Autosave when customer_name changes
+  useAutosaveWebhook(qna);
 
   return (
     <main className="qna-editor-content">
@@ -40,23 +61,18 @@ function Qna({ qna, onChange, onSave }) {
           onInput={handleHeaderInput}
           onFocus={() => setIsFocused(true)}
           onBlur={() => setIsFocused(false)}
-          data-placeholder="Type your question..."
+          data-placeholder="Enter Customer Name"
         />
       </div>
 
-      <div className="qna-field-section">
-        <label className="qna-label">Answer</label>
-        <textarea
-          className="qna-textarea"
-          value={safeQna.answer ?? ""}
-          onChange={handleAnswerInput}
-          placeholder="Enter the bot answer..."
-        />
+      <div className="chat-and-results-layout">
+        <div className="chat-half">
+          <ChatTextBox messages={messages} input={input} setInput={setInput} onSend={() => {setMessages([...messages, {text: input, sender: "user"}]); setInput("");}} />
+        </div>
+        <div className="results-half">
+          <SearchResults plans={samplePlans} onRowClick={handleRowClick} />
+        </div>
       </div>
-
-      <button className="qna-save-btn" onClick={onSave}>
-        Save QnA
-      </button>
     </main>
   );
 }

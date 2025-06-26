@@ -1,24 +1,15 @@
-.chat-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    width: 100%;
-    height: 100%;
+.chat-test-container {
     padding: 2rem;
     color: #fff;
-    box-sizing: border-box;
   }
   
   .chat-box {
     background: #1f1f1f;
     padding: 1rem;
-    flex: 1 1 auto;
-    height: auto;
-    width: 100%;
+    height: 300px;
     overflow-y: auto;
     border-radius: 8px;
     margin-bottom: 1rem;
-    box-sizing: border-box;
   }
   
   .msg {
@@ -38,8 +29,6 @@
   .chat-input {
     display: flex;
     gap: 1rem;
-    width: 100%;
-    box-sizing: border-box;
   }
   
   .chat-input input {
@@ -49,7 +38,6 @@
     border: none;
     background: #333;
     color: #fff;
-    box-sizing: border-box;
   }
   
   .chat-input button {
@@ -59,6 +47,5 @@
     border-radius: 4px;
     color: #000;
     font-weight: bold;
-    box-sizing: border-box;
   }
   
