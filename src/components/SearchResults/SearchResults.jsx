@@ -12,6 +12,7 @@ const columns = [
   { key: "free_ld", label: "Free LD" },
   { key: "activation_fee", label: "Activation Fee" },
   { key: "promo_start_date", label: "Start Date" },
+  { key: "promo_end_date", label: "End Date" },
 ];
 
 export default function SearchResults({ plans = [], onRowClick }) {

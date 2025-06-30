@@ -1,5 +1,5 @@
 /* Main layout wrapper */
-.qna-editor-layout {
+.search-editor-layout {
   flex: 1;
   display: flex;
   width: 100%;
@@ -8,7 +8,7 @@
   background-color: #1e1e1e;
   color: #f1f1f1;
 }
-.qna-editor-panel {
+.search-editor-panel {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -16,8 +16,8 @@
   padding: 1.5rem;
 }
 
-.qna-sidebar,
+.search-sidebar,
 .app-sidebar,
-.qna-editor-panel {
+.search-editor-panel {
   box-shadow: inset 0 0 0 1px rgba(255,255,255,0.02);
 }

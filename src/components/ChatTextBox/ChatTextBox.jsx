@@ -1,18 +1,27 @@
 import { useEffect, useRef } from "react";
 import "./ChatTextBox.css";
 
-function ChatTextBox({ messages, input, setInput, onSend }) {
-    const bottomRef = useRef(null);
-    useEffect(() => {
-        bottomRef.current?.scrollIntoView( );
-    }, [messages]);
+function ChatTextBox({ messages, input, setInput, onSend, handleMessageClick }) {
+  const bottomRef = useRef(null);
+  useEffect(() => {
+    bottomRef.current?.scrollIntoView();
+  }, [messages]);
+  const sortedMessages = messages.slice().sort((a, b) => a.id - b.id);
+
+
   return (
     <div className="chat-container">
       <div className="chat-box">
-        {messages.map((msg, idx) => (
-          <div key={idx} className={`msg ${msg.sender}`}>
-            <span>{msg.text}</span>
+        {sortedMessages.map((msg) => (
+          <div
+            key={msg.id}
+            className={`msg ${msg.direction}`}
+            onClick={msg.direction === "outgoing" ? () => handleMessageClick(msg.id) : undefined}
+            style={{ cursor: msg.direction === "outgoing" ? "pointer" : "default" }}
+          >
+            <span>{msg.content}</span>
           </div>
+
         ))}
         <div ref={bottomRef} />
       </div>

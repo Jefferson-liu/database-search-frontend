@@ -1,5 +1,4 @@
 export function autosaveToWebhook(data) {
-  // Change this URL to your actual autosave webhook endpoint
   const url = "http://127.0.0.1:8000/webhook/autosave/user";
   return fetch(url, {
     method: "POST",

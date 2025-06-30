@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import AppLayout from "./layouts/AppLayout/AppLayout";
 import AppWrapper from "./components/AppWrapper";
-
+import { loadUserData } from "./api/loadData";
 import Home from "./pages/Home/Home";
 import QnaEditor from "./pages/UserSearch/QnaEditor";
 
@@ -27,7 +27,7 @@ export const router = createBrowserRouter([
         path: "search",
         element: <QnaEditor />,
         loader: async () => {
-          const data = null;
+          const data = await loadUserData();
           return { data };
         },
       },

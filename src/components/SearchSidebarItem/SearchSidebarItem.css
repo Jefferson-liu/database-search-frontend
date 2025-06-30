@@ -1,4 +1,4 @@
-.qna-sidebar-item {
+.search-sidebar-item {
   position: relative;
   padding: 10px;
   border-radius: 4px;
@@ -13,17 +13,17 @@
   overflow: hidden;
 }
 
-.qna-sidebar-item:hover {
+.search-sidebar-item:hover {
   background-color: #3a3d41;
 }
 
-.qna-sidebar-item.selected {
+.search-sidebar-item.selected {
   background-color: #0078d4;
   color: white;
   font-weight: 500;
 }
 
-.qna-sidebar-item-actions {
+.search-sidebar-item-actions {
   display: flex;
   align-items: center;
   opacity: 0;
@@ -31,11 +31,11 @@
   flex-shrink: 0; /* Prevent this from squashing the label */
 }
 
-.qna-sidebar-item:hover .qna-sidebar-item-actions {
+.search-sidebar-item:hover .search-sidebar-item-actions {
   opacity: 1;
 }
 
-.qna-sidebar-item-delete {
+.search-sidebar-item-delete {
   visibility: hidden;
   opacity: 0;
   background: none;
@@ -48,23 +48,23 @@
   /* small gap from text */
 }
 
-.qna-sidebar-item:hover .qna-sidebar-item-delete {
+.search-sidebar-item:hover .search-sidebar-item-delete {
   visibility: visible;
   opacity: 1;
 }
 
-.qna-sidebar-item-label {
+.search-sidebar-item-label {
   flex: 1;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-.qna-sidebar-item-delete:active {
+.search-sidebar-item-delete:active {
   outline: none;
 }
 
-.qna-sidebar-item-delete:hover {
+.search-sidebar-item-delete:hover {
   color: #f87171;
   /* red-ish */
 }

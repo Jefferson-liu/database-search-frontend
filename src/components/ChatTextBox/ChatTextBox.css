@@ -25,12 +25,12 @@
     margin-bottom: 0.75rem;
   }
   
-  .msg.user {
+  .msg.incoming {
     text-align: right;
     color: #4ae;
   }
   
-  .msg.bot {
+  .msg.outgoing {
     text-align: left;
     color: #ccc;
   }
